@@ -1,0 +1,75 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#booking{
+  background-image: url(/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.div-booking {
+  width: 500px;
+  padding: 50px;
+}
+
+.elem-group {
+  margin: 20px 0;
+}
+
+.elem-group.inlined {
+  width: 49%;
+  display: inline-block;
+  float: left;
+  margin-left: 1%;
+}
+
+.elem-group-label {
+  font-family: 'Nanum Gothic';
+  padding-bottom: 10px;
+  font-size: 1.25em;
+}
+
+.elem-group-input, #room-selection, .elem-group-textarea {
+  border-radius: 2px;
+  border: 2px solid #777;
+  box-sizing: border-box;
+  font-size: 1.25em;
+  font-family: 'Nanum Gothic';
+  width: 100%;
+  padding: 10px;
+}
+
+.elem-group.inlined input {
+  width: 95%;
+  display: inline-block;
+}
+
+.elem-group-textarea {
+  height: 250px;
+}
+
+.elem-group-hr {
+  border: 1px dotted white;
+  color: white;
+  background-color: white;
+}
+
+.btn-submit {
+  width: 100%;
+  height: 50px;
+  background: orange;
+  border: none;
+  font-size: 1.25em;
+  font-family:monospace;
+  font-size: 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.btn-submit:hover {
+  border: 2px solid black;
+}
