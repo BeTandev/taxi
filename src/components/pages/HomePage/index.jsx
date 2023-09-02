@@ -1,6 +1,6 @@
 import React from "react";
 import Preferential from "../../Preferential";
-import AboutUS from "../../aboutUs";
+import AboutUS from "../../AboutUS";
 import MyTeam from "../../MyTeam";
 import Evaluate from "../../Evaluate";
 import SecondHeader from "../../Header/SecondHeader";
