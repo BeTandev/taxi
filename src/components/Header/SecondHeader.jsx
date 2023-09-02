@@ -58,12 +58,12 @@ function SecondHeader() {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item className="dropdown-item-custom" href="/">Trang Chủ</Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom" href="/about-us">About Us</Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom" href="/uu-dai">Ưu đãi</Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom" href="/my-team">Thành Viên</Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom" href="/partner">Đối Tác</Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom" href="/login">Đăng nhập</Dropdown.Item>
+                <Dropdown.Item className="dropdown-item-custom"><Link to="/">Trang Chủ</Link></Dropdown.Item>
+                <Dropdown.Item className="dropdown-item-custom"><Link to="/about-us">About Us</Link></Dropdown.Item>
+                <Dropdown.Item className="dropdown-item-custom"><Link to="/uu-dai">Ưu đãi</Link></Dropdown.Item>
+                <Dropdown.Item className="dropdown-item-custom"><Link to="/my-team">Thành Viên</Link></Dropdown.Item>
+                <Dropdown.Item className="dropdown-item-custom"><Link to="/partner">Đối Tác</Link></Dropdown.Item>
+                <Dropdown.Item className="dropdown-item-custom"><Link to="/login">Đăng nhập</Link></Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <div
