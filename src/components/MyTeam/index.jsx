@@ -48,9 +48,7 @@ function MyTeam() {
         <div className="heading_container heading_center">
           <h2>Các thành viên trong "công ty" chúng tôi</h2>
           <p>
-            Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a
-            euismod suspendisse vel, sed quam nulla mauris iaculis. Erat eget
-            vitae malesuada, tortor tincidunt porta lorem lectus.
+          Trong công ty Taxi Tây Ninh, chúng tôi tự hào có đội ngũ thành viên đa tài, nhiệt huyết và luôn sẵn sàng phục vụ khách hàng một cách chuyên nghiệp và nhanh nhẹn.
           </p>
         </div>
         <div className="row">

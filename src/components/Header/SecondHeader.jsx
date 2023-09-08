@@ -3,8 +3,29 @@ import { Link } from "react-router-dom";
 import NavbarItem from "./NavbarItem";
 import ContractItem from "../Shared/ContractItem";
 import { Dropdown } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 function SecondHeader() {
+
+  const usernameLogin = useSelector(
+    (state) => state.USERNAMELOGIN.usernameLogin
+  );
+  let loginbtn = ''
+
+
+  if (!usernameLogin) {
+    loginbtn = (<NavbarItem
+      connect="/login"
+      content="Đăng nhập"
+      isShowLoginIcon
+    ></NavbarItem>)
+  } else {
+    loginbtn = (<li className="nav-item nav-custom">
+      <p className="nav-link d-inline">Hi! {usernameLogin}</p>
+    </li>)
+  }
+
+
   return (
     <header className="header_section sticky-top bg-dark">
       <div className="header_top">
@@ -18,7 +39,7 @@ function SecondHeader() {
             <ContractItem
               connect=""
               icon="fa fa-phone"
-              content="Call : +84 0900 333 007"
+              content="Đường dây nóng: +84 0900 333 007"
             ></ContractItem>
             <ContractItem
               connect=""
@@ -53,17 +74,33 @@ function SecondHeader() {
               Finter
             </Link>
             <Dropdown className="dropdown-custom">
-              <Dropdown.Toggle variant="secondary" id="dropdown-basic" className="dropdown-custom">
+              <Dropdown.Toggle
+                variant="secondary"
+                id="dropdown-basic"
+                className="dropdown-custom"
+              >
                 Menu
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item className="dropdown-item-custom"><Link to="/">Trang Chủ</Link></Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom"><Link to="/about-us">About Us</Link></Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom"><Link to="/uu-dai">Ưu đãi</Link></Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom"><Link to="/my-team">Thành Viên</Link></Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom"><Link to="/partner">Đối Tác</Link></Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom"><Link to="/login">Đăng nhập</Link></Dropdown.Item>
+                <Dropdown.Item className="dropdown-item-custom">
+                  <Link to="/">Trang Chủ</Link>
+                </Dropdown.Item>
+                <Dropdown.Item className="dropdown-item-custom">
+                  <Link to="/about-us">About Us</Link>
+                </Dropdown.Item>
+                <Dropdown.Item className="dropdown-item-custom">
+                  <Link to="/uu-dai">Ưu đãi</Link>
+                </Dropdown.Item>
+                <Dropdown.Item className="dropdown-item-custom">
+                  <Link to="/my-team">Thành Viên</Link>
+                </Dropdown.Item>
+                <Dropdown.Item className="dropdown-item-custom">
+                  <Link to="/partner">Đối Tác</Link>
+                </Dropdown.Item>
+                <Dropdown.Item className="dropdown-item-custom">
+                  <Link to="/login">Đăng nhập</Link>
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <div
@@ -79,11 +116,12 @@ function SecondHeader() {
                   content="Thành Viên"
                 ></NavbarItem>
                 <NavbarItem connect="/partner" content="Đối Tác"></NavbarItem>
-                <NavbarItem
+                {/* <NavbarItem
                   connect="/login"
                   content="Đăng nhập"
                   isShowLoginIcon
-                ></NavbarItem>
+                ></NavbarItem> */}
+                {loginbtn}
               </ul>
             </div>
           </nav>

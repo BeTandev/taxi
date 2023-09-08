@@ -1,6 +1,6 @@
 import React from "react";
 import SliderSection from "../SliderSection";
-import HeroBg from "/hero-bg.jpg"
+import HeroBg from "/headerbackground.jpg"
 
 function Header() {
   return (
