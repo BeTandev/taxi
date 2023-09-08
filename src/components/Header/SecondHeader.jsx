@@ -21,7 +21,7 @@ function SecondHeader() {
     ></NavbarItem>)
   } else {
     loginbtn = (<li className="nav-item nav-custom">
-      <p className="nav-link d-inline">Hi! {usernameLogin}</p>
+      <p className="nav-link d-inline-block">Hi! {usernameLogin}</p>
     </li>)
   }
 
