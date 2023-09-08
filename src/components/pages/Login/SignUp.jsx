@@ -61,6 +61,7 @@ function SignUp() {
           name="username"
           value={user.username}
           onChange={handleChange}
+          required
         />
       </div>
 
@@ -74,6 +75,7 @@ function SignUp() {
           value={user.password}
           onChange={handleChange}
           className="input"
+          required
         />
       </div>
 
@@ -81,7 +83,7 @@ function SignUp() {
         <label htmlFor="pass" className="label text-white">
           Repeat Password
         </label>
-        <input type="password" name="repeatpassword" className="input" onChange={getRepeatPassword}/>
+        <input type="password" name="repeatpassword" className="input" onChange={getRepeatPassword} required/>
       </div>
 
       <div className="group">
@@ -94,6 +96,7 @@ function SignUp() {
           value={user.email}
           onChange={handleChange}
           className="input"
+          required
         />
       </div>
       <div className="group">

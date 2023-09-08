@@ -1,8 +1,50 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../../../css/booking.css"
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 function Booking() {
+  const dispatch = useDispatch()
+  // const navigate = useNavigate();
+  const [booking, setBooking] = useState({
+    name: "",
+    phone: "",
+    pickupLocation: "",
+    destination: "",
+    carType: "Xe 4 chỗ",
+    note: ""
+  });
+
+  const handleChange = (e) => {
+    setBooking({ ...booking, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    sendBookingData(booking);
+  };
+
+  const sendBookingData = async (user) => {
+    try {
+      const response = await fetch("https://apiuser-zavj.onrender.com/bookings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(booking),
+      });
+
+      if (response.ok) {
+        alert("Đặt xe thành công");
+      } else {
+        alert("Vui lòng đặt xe lại");
+      }
+    } catch (error) {
+      console.error("Lỗi:", error);
+    }
+  };
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -11,7 +53,7 @@ function Booking() {
     <section id="booking">
       <div className="div-booking mx-auto">
         <h2 className="text-white">Đặt xe</h2>
-        <form action="reservation.php" method="post">
+        <form onSubmit={handleSubmit}>
           <div className="elem-group">
             <label
               className="elem-group-label d-block text-white"
@@ -23,9 +65,10 @@ function Booking() {
               className="elem-group-input"
               type="text"
               id="name"
-              name="visitor_name"
+              name="name"
               placeholder="John Doe"
-              pattern="[A-Z\sa-z]{3,20}"
+              value={booking.name}
+              onChange={handleChange}
               required
             />
           </div>
@@ -38,11 +81,12 @@ function Booking() {
             </label>
             <input
               className="elem-group-input"
-              type="tel"
+              type="number"
               id="phone"
-              name="visitor_phone"
+              name="phone"
               placeholder="498-348-3872"
-              pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})"
+              value={booking.phone}
+              onChange={handleChange}
               required
             />
           </div>
@@ -56,11 +100,12 @@ function Booking() {
             </label>
             <input
               className="elem-group-input"
-              type="tel"
-              id="phone"
-              name="visitor_phone"
+              type="text"
+              id="pickupLocation"
+              name="pickupLocation"
               placeholder="498-348-3872"
-              pattern="[A-Z\sa-z]{3,20}"
+              value={booking.pickupLocation}
+              onChange={handleChange}
               required
             />
           </div>
@@ -73,11 +118,12 @@ function Booking() {
             </label>
             <input
               className="elem-group-input"
-              type="tel"
-              id="phone"
-              name="visitor_phone"
+              type="text"
+              id="destination"
+              name="destination"
               placeholder="498-348-3872"
-              pattern="[A-Z\sa-z]{3,20}"
+              value={booking.destination}
+              onChange={handleChange}
               required
             />
           </div>
@@ -88,10 +134,10 @@ function Booking() {
             >
               Bạn muốn dùng loại xe mấy chỗ?
             </label>
-            <select id="room-selection" name="room_preference" required>
-              <option value>Xe 4 chỗ</option>
-              <option value="adjoining">Xe 7 chỗ</option>
-              <option value="adjacent">Xe 16 chỗ</option>
+            <select id="room-selection" name="carType" required onChange={handleChange}>
+              <option value="Xe 4 chỗ">Xe 4 chỗ</option>
+              <option value="Xe 7 chỗ">Xe 7 chỗ</option>
+              <option value="Xe 16 chỗ">Xe 16 chỗ</option>
             </select>
           </div>
           <hr className="elem-group-hr" />
@@ -104,9 +150,11 @@ function Booking() {
             </label>
             <textarea
               className="elem-group-textarea"
-              id="message"
-              name="visitor_message"
+              id="note"
+              name="note"
               placeholder="Tell us anything else that might be important."
+              value={booking.note}
+              onChange={handleChange}
               required
               defaultValue={""}
             />
