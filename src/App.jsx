@@ -5,6 +5,8 @@ import AboutUsPage from "./components/pages/AboutUsPage";
 import UuDaiPage from "./components/pages/UuDaiPage";
 import MyTeamPage from "./components/pages/MyTeamPage";
 import Booking from "./components/pages/Booking";
+import PartnerPage from "./components/pages/PartnerPgae";
+
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
         <Route path="/my-team" element={<MyTeamPage></MyTeamPage>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/booking" element={<Booking></Booking>}></Route>
-        {/* <Route path="/partner" element={<Partner></Partner>}></Route> */}
+        <Route path="/partner" element={<PartnerPage></PartnerPage>}></Route>
       </Routes>
       <br></br>
     </div>
