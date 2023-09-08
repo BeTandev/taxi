@@ -8,18 +8,17 @@ function Footer() {
         <div className="container">
           <div className="info_top">
             <div className="row">
-              <div className="col-md-3 ">
+              <div className="col-lg-4 ">
                 <a className="navbar-brand" href="index.html">
                   Finter
                 </a>
               </div>
-              <div className="col-md-5 ">
+              <div className="col-lg-5 ">
                 <div className="info_contact">
-                  <ContractItem connect="" icon="fa fa-map-marker" content="Location" ></ContractItem>
                   <ContractItem connect="" icon="fa fa-phone" content="Call : +84 0900 333 007"></ContractItem>
                 </div>
               </div>
-              <div className="col-md-4 ">
+              <div className="col-lg-3 d-flex justify-content-start">
                 <div className="social_box">
                   <ContractItem connect="https://www.facebook.com/" icon="fa fa-facebook"></ContractItem>
                   <ContractItem connect="https://www.x.com/" icon="fa fa-twitter"></ContractItem>
@@ -31,36 +30,23 @@ function Footer() {
           </div>
           <div className="info_bottom">
             <div className="row">
-              <div className="col-lg-3 col-md-6">
-                <div className="info_detail">
-                  <h5>Company</h5>
-                  <p>
-                    Randomised words which don't look even slightly believable.
-                    If you are going to use a passage of Lorem Ipsum, you need
-                    to be sure
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6">
-                <div className="info_form">
-                  <h5>NEWSLETTER</h5>
-                  <form>
-                    <input type="text" placeholder="Enter Your Email" />
-                    <button type="submit">Subscribe</button>
-                  </form>
-                </div>
-              </div>
               <div className="col-lg-4 col-md-6">
                 <div className="info_detail">
-                  <h5>Services</h5>
+                  <h5>Tắc Suy Tây Ninh</h5>
                   <p>
-                    Randomised words which don't look even slightly believable.
-                    If you are going to use a passage of Lorem Ipsum, you need
-                    to be sure
+                  Taxi Tây Ninh là công ty taxi hàng đầu, cam kết sự tin cậy, chuyên nghiệp và dịch vụ an toàn, nhanh chóng, với đội ngũ tài xế chuyên nghiệp, xe hiện đại và giá cả hợp lý.
                   </p>
                 </div>
               </div>
-              <div className="col-lg-2 col-md-6">
+              <div className="col-lg-5 col-md-6">
+                <div className="info_detail">
+                  <h5>Dịch vụ</h5>
+                  <p>
+                  Dịch vụ taxi Tây Ninh đa dạng xe, tài xế chuyên nghiệp, đón/trả linh hoạt, an toàn. Đặt xe online, gọi điện, chất lượng dịch vụ đáp ứng tốt nhất cho khách hàng.
+                  </p>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6">
                 <div>
                   <h5>Useful links</h5>
                   <ul className="info_menu">
