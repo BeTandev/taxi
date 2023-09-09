@@ -24,7 +24,7 @@ function Booking() {
     sendBookingData(booking);
   };
 
-  const sendBookingData = async (user) => {
+  const sendBookingData = async (booking) => {
     try {
       const response = await fetch("https://apiuser-zavj.onrender.com/bookings", {
         method: "POST",
@@ -62,11 +62,10 @@ function Booking() {
               Tên bạn là gì?
             </label>
             <input
-              className="elem-group-input"
+              className="elem-group-input rounded"
               type="text"
               id="name"
               name="name"
-              placeholder="John Doe"
               value={booking.name}
               onChange={handleChange}
               required
@@ -80,11 +79,10 @@ function Booking() {
               Số điện thoại của bạn
             </label>
             <input
-              className="elem-group-input"
+              className="elem-group-input rounded"
               type="number"
               id="phone"
               name="phone"
-              placeholder="498-348-3872"
               value={booking.phone}
               onChange={handleChange}
               required
@@ -99,11 +97,10 @@ function Booking() {
               Chúng tôi có thể đón bạn ở đâu?
             </label>
             <input
-              className="elem-group-input"
+              className="elem-group-input rounded"
               type="text"
               id="pickupLocation"
               name="pickupLocation"
-              placeholder="498-348-3872"
               value={booking.pickupLocation}
               onChange={handleChange}
               required
@@ -117,11 +114,10 @@ function Booking() {
               Bạn muốn đi đến đâu?
             </label>
             <input
-              className="elem-group-input"
+              className="elem-group-input rounded"
               type="text"
               id="destination"
               name="destination"
-              placeholder="498-348-3872"
               value={booking.destination}
               onChange={handleChange}
               required
@@ -134,7 +130,7 @@ function Booking() {
             >
               Bạn muốn dùng loại xe mấy chỗ?
             </label>
-            <select id="room-selection" name="carType" required onChange={handleChange}>
+            <select id="room-selection" name="carType" required onChange={handleChange} className="rounded">
               <option value="Xe 4 chỗ">Xe 4 chỗ</option>
               <option value="Xe 7 chỗ">Xe 7 chỗ</option>
               <option value="Xe 16 chỗ">Xe 16 chỗ</option>
@@ -149,14 +145,12 @@ function Booking() {
               Bạn có ghi chú gì không?
             </label>
             <textarea
-              className="elem-group-textarea"
+              className="elem-group-textarea rounded"
               id="note"
               name="note"
-              placeholder="Tell us anything else that might be important."
               value={booking.note}
               onChange={handleChange}
               required
-              defaultValue={""}
             />
           </div>
           <button className="btn-submit text-white" type="submit">

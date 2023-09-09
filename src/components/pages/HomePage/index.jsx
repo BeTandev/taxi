@@ -1,12 +1,12 @@
 import React from "react";
 import Preferential from "../../Preferential";
 import AboutUS from "../../AboutUS";
-import MyTeam from "../../MyTeam";
-import Evaluate from "../../Evaluate";
+import MyTeam from "../../MyTeam";;
 import SecondHeader from "../../Header/SecondHeader";
 import Header from "../../Header";
 import Footer from "../../Footer";
 import Partner from "../../Partner";
+import Contract from "../../Contract";
 
 function HomePage() {
   return (
@@ -17,7 +17,7 @@ function HomePage() {
       <AboutUS></AboutUS>
       <Partner></Partner>
       <MyTeam></MyTeam>
-      <Evaluate></Evaluate>
+      <Contract></Contract>
       <Footer></Footer>
     </>
   );
