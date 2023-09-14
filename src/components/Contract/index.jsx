@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import aboutImg from "/contract-img.jpg";
+import InputBlock from "../Shared/InputBlock";
 
 function Contract() {
   const [messages, setMessages] = useState({
@@ -52,63 +53,36 @@ function Contract() {
                 <h2>Để lại lời nhắn cho chúng tôi</h2>
               </div>
               <form onSubmit={handleSubmit}>
-                <div className="elem-group">
-                  <label className="d-block" htmlFor="name">
-                    Tên bạn là gì?
-                  </label>
-                  <input
-                    className="contract-input px-2"
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={messages.name}
-                    onChange={handleChange}
-                    required
-                  ></input>
-                </div>
-                <div className="elem-group">
-                  <label className="d-block" htmlFor="name">
-                    Email:
-                  </label>
-                  <input
-                    className="contract-input px-2"
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={messages.email}
-                    onChange={handleChange}
-                    required
-                  ></input>
-                </div>
-                <div className="elem-group">
-                  <label className="d-block" htmlFor="name">
-                    Số điện thoại:
-                  </label>
-                  <input
-                    className="contract-input px-2"
-                    type="number"
-                    id="phonenumber"
-                    name="phonenumber"
-                    value={messages.phonenumberL}
-                    onChange={handleChange}
-                    required
-                  ></input>
-                </div>
-                <div className="elem-group">
-                  <label className="d-block" htmlFor="name">
-                    Lời nhắn bạn muốn để lại:
-                  </label>
-                  <input
-                    className="contract-input px-2"
-                    type="text"
-                    id="message"
-                    name="message"
-                    value={messages.message}
-                    onChange={handleChange}
-                    required
-                  ></input>
-                </div>
-
+                <InputBlock
+                  isTextDark
+                  labelContent="Tên bạn là gì?"
+                  idInput="name"
+                  valueInput={messages.name}
+                  handleChange={handleChange}
+                ></InputBlock>
+                <InputBlock
+                  isTextDark
+                  labelContent="Email:"
+                  typeInput="email"
+                  idInput="email"
+                  valueInput={messages.email}
+                  handleChange={handleChange}
+                ></InputBlock>
+                <InputBlock
+                  isTextDark
+                  labelContent="Số điện thoại:"
+                  typeInput="number"
+                  idInput="phonenumber"
+                  valueInput={messages.phonenumberL}
+                  handleChange={handleChange}
+                ></InputBlock>
+                <InputBlock
+                  isTextDark
+                  labelContent="Lời nhắn bạn muốn để lại:"
+                  idInput="message"
+                  valueInput={messages.message}
+                  handleChange={handleChange}
+                ></InputBlock>
                 <button className="contract-btn" type="submit">
                   Đặt xe
                 </button>
