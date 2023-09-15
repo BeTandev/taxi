@@ -9,13 +9,16 @@ function Contract() {
     phonenumber: "",
     message: "",
   });
+
   const handleChange = (e) => {
     setMessages({ ...messages, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     sendMessageData(messages);
   };
+
   const sendMessageData = async (messages) => {
     try {
       const response = await fetch(
@@ -31,6 +34,12 @@ function Contract() {
 
       if (response.ok) {
         alert("Đã gửi tin nhắn thành công");
+        setMessages({
+          name: "",
+          email: "",
+          phonenumber: "",
+          message: "",
+        });
       } else {
         alert("Vui lòng gửi lại tin nhắn");
       }
@@ -38,13 +47,19 @@ function Contract() {
       console.error("Lỗi:", error);
     }
   };
+
+
   return (
     <section id="contract" className="mb-5">
       <div className="container">
         <div className="row">
           <div className="col-md-6">
             <div className="wrap-contract-img d-flex justify-content-center align-items-center rounded">
-              <img src={aboutImg} className="contract-img rounded" alt="about img" />
+              <img
+                src={aboutImg}
+                className="contract-img rounded"
+                alt="about img"
+              />
             </div>
           </div>
           <div className="col-md-6">
@@ -73,7 +88,7 @@ function Contract() {
                   labelContent="Số điện thoại:"
                   typeInput="number"
                   idInput="phonenumber"
-                  valueInput={messages.phonenumberL}
+                  valueInput={messages.phonenumber}
                   handleChange={handleChange}
                 ></InputBlock>
                 <InputBlock

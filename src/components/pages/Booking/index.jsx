@@ -40,6 +40,14 @@ function Booking() {
 
       if (response.ok) {
         alert("Đặt xe thành công");
+        setBooking({
+          name: "",
+          phone: "",
+          pickupLocation: "",
+          destination: "",
+          carType: "Xe 4 chỗ",
+          note: "",
+        });
       } else {
         alert("Vui lòng đặt xe lại");
       }

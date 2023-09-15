@@ -40,7 +40,13 @@ function SignUp() {
       });
 
       if (response.ok) {
-        alert("Đã đăng ký thành công");
+        alert(" Đã đăng ký thành công\n Bạn có thể chuyển qua phần đăng nhập để bắt đầu đăng nhập");
+        setUser({
+          username: "",
+          password: "",
+          email: "",
+        });
+        setRepeatPassword('')
       } else if (response.status === 400) {
         alert("Tên người dùng đã tồn tại");
       }
@@ -71,6 +77,7 @@ function SignUp() {
         typeInput="password"
         nameInput="repeatpassword"
         handleInput={getRepeatPassword}
+        valueInput={repeatPassword}
       ></SignInput>
 
       <SignInput
