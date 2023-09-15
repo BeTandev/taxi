@@ -43,8 +43,8 @@ function Contract() {
       <div className="container">
         <div className="row">
           <div className="col-md-6">
-            <div className="wrap-contract-img d-flex justify-content-center align-items-center">
-              <img src={aboutImg} className="contract-img" alt="about img" />
+            <div className="wrap-contract-img d-flex justify-content-center align-items-center rounded">
+              <img src={aboutImg} className="contract-img rounded" alt="about img" />
             </div>
           </div>
           <div className="col-md-6">

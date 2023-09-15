@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SignInput from "../../Shared/SignInput";
+import BackHomeBtn from "./BackHomeBtn";
+import SubmitBtn from "./SubmitBtn";
 
 function SignUp() {
   const [user, setUser] = useState({
@@ -7,9 +10,9 @@ function SignUp() {
     password: "",
     email: "",
   });
-  const [repeatPassword, setRepeatPassword] = useState()
-  function getRepeatPassword(e){
-    setRepeatPassword(e.target.value)
+  const [repeatPassword, setRepeatPassword] = useState();
+  function getRepeatPassword(e) {
+    setRepeatPassword(e.target.value);
   }
 
   const handleChange = (e) => {
@@ -19,10 +22,10 @@ function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Gửi user object lên API
-    if(user.password === repeatPassword){
+    if (user.password === repeatPassword) {
       sendRegistrationData(user);
-    }else{
-      alert('Mật khẩu bạn đã điền không giống nhau')
+    } else {
+      alert("Mật khẩu bạn đã điền không giống nhau");
     }
   };
 
@@ -38,8 +41,8 @@ function SignUp() {
 
       if (response.ok) {
         alert("Đã đăng ký thành công");
-      } else {
-        alert("Vui lòng thử lại");
+      } else if (response.status === 400) {
+        alert("Tên người dùng đã tồn tại");
       }
     } catch (error) {
       console.error("Lỗi:", error);
@@ -48,71 +51,41 @@ function SignUp() {
 
   return (
     <form className="sign-up-htm" onSubmit={handleSubmit}>
-      {/* <div className="sign-up-htm"> */}
+      <SignInput
+        labelContent="Tên người dùng"
+        nameInput="username"
+        valueInput={user.username}
+        handleInput={handleChange}
+      ></SignInput>
 
-      <div className="group">
-        <label htmlFor="user" className="label text-white">
-          Username
-        </label>
+      <SignInput
+        labelContent="Mật khẩu"
+        typeInput="password"
+        nameInput="password"
+        valueInput={user.password}
+        handleInput={handleChange}
+      ></SignInput>
 
-        <input
-          type="text"
-          className="input"
-          name="username"
-          value={user.username}
-          onChange={handleChange}
-          required
-        />
-      </div>
+      <SignInput
+        labelContent="Nhật lại mật khẩu"
+        typeInput="password"
+        nameInput="repeatpassword"
+        handleInput={getRepeatPassword}
+      ></SignInput>
 
-      <div className="group">
-        <label htmlFor="pass" className="label text-white">
-          Password
-        </label>
-        <input
-          type="password"
-          name="password"
-          value={user.password}
-          onChange={handleChange}
-          className="input"
-          required
-        />
-      </div>
+      <SignInput
+        labelContent="Địa chỉ Email"
+        typeInput="email"
+        nameInput="email"
+        valueInput={user.email}
+        handleInput={handleChange}
+      ></SignInput>
 
-      <div className="group">
-        <label htmlFor="pass" className="label text-white">
-          Repeat Password
-        </label>
-        <input type="password" name="repeatpassword" className="input" onChange={getRepeatPassword} required/>
-      </div>
+      <SubmitBtn></SubmitBtn>
 
-      <div className="group">
-        <label htmlFor="pass" className="label text-white">
-          Email Address
-        </label>
-        <input
-          type="email"
-          name="email"
-          value={user.email}
-          onChange={handleChange}
-          className="input"
-          required
-        />
-      </div>
-      <div className="group">
-        <button type="submit" className="button">
-          Đăng ký
-        </button>
-      </div>
-
-      <div className="group">
-        <Link to="/" className="button text-center">
-          Quay lại trang chủ
-        </Link>
-      </div>
+      <BackHomeBtn></BackHomeBtn>
 
       <div className="hr" />
-      {/* </div> */}
     </form>
   );
 }

@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getUsernameLogin } from "../../../store/UsernameLoginSlice";
+import SignInput from "../../Shared/SignInput";
+import BackHomeBtn from "./BackHomeBtn";
+import SubmitBtn from "./SubmitBtn";
 
 function SignIn() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [user, setUser] = useState({
     username: "",
@@ -31,9 +34,9 @@ function SignIn() {
       });
 
       if (response.ok) {
-        navigate("/")
+        navigate("/");
         // alert("Đăng nhập thành công");
-        dispatch(getUsernameLogin(user.username))
+        dispatch(getUsernameLogin(user.username));
       } else {
         alert("Vui lòng kiểm tra lại tài khoản và mạt khẩu của bạn");
       }
@@ -44,43 +47,24 @@ function SignIn() {
 
   return (
     <form className="sign-in-htm" onSubmit={handleSubmit}>
-      <div className="group">
-        <label htmlFor="user" className="label text-white">
-          Username
-        </label>
-        <input
-          type="text"
-          className="input"
-          name="username"
-          value={user.username}
-          onChange={handleChange}
-        />
-      </div>
+      <SignInput
+        labelContent="Tên người dùng"
+        nameInput="username"
+        valueInput={user.username}
+        handleInput={handleChange}
+      ></SignInput>
 
-      <div className="group">
-        <label htmlFor="pass" className="label text-white">
-          Password
-        </label>
-        <input
-          type="password"
-          name="password"
-          value={user.password}
-          onChange={handleChange}
-          className="input"
-        />
-      </div>
+      <SignInput
+        labelContent="Mật khẩu"
+        typeInput="password"
+        nameInput="password"
+        valueInput={user.password}
+        handleInput={handleChange}
+      ></SignInput>
 
-      <div className="group">
-        <button type="submit" className="button">
-          Đăng nhập
-        </button>
-      </div>
+      <SubmitBtn></SubmitBtn>
 
-      <div className="group">
-        <Link to="/" className="button text-center">
-          Quay lại trang chủ
-        </Link>
-      </div>
+      <BackHomeBtn></BackHomeBtn>
 
       <div className="hr" />
     </form>

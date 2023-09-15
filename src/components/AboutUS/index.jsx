@@ -20,10 +20,10 @@ function AboutUS() {
             </div>
           </div>
           <div className="col-md-5 px-0">
-            <div className="img-box ">
+            <div className="img-box rounded">
               <img
                 src={aboutImg}
-                className="box_img"
+                className="box_img rounded"
                 alt="about img"
               />
             </div>

@@ -7,10 +7,10 @@ function Partner() {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-5 px-0 offset-md-1">
-            <div className="img-box pr-md-2">
+            <div className="img-box pr-md-2 rounded">
               <img
                 src={aboutImg}
-                className="box_img"
+                className="box_img rounded"
                 alt="about img"
               />
             </div>
