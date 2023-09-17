@@ -37,6 +37,7 @@ function SignIn() {
         navigate("/");
         // alert("Đăng nhập thành công");
         dispatch(getUsernameLogin(user.username));
+        // sessionStorage.setItem('account', user);
       } else {
         alert("Vui lòng kiểm tra lại tài khoản và mạt khẩu của bạn");
       }

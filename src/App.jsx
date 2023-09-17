@@ -6,6 +6,7 @@ import UuDaiPage from "./components/pages/UuDaiPage";
 import MyTeamPage from "./components/pages/MyTeamPage";
 import Booking from "./components/pages/Booking";
 import PartnerPage from "./components/pages/PartnerPgae";
+import RegisPartner from "./components/pages/RegisPartner";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/booking" element={<Booking></Booking>}></Route>
         <Route path="/partner" element={<PartnerPage></PartnerPage>}></Route>
+        <Route path="/partner-page" element={<RegisPartner></RegisPartner>}></Route>
       </Routes>
       <br></br>
     </div>

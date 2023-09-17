@@ -1,5 +1,6 @@
 import React from "react";
 import aboutImg from "/taxi-driver.jpeg";
+import { Link } from "react-router-dom";
 
 function Partner() {
   return (
@@ -20,12 +21,12 @@ function Partner() {
               <div className="heading_container">
                 <h2>Trở thành tài xế với chúng tôi</h2>
               </div>
-              <p className="detail_p_mt">
+              <p className="detail_p_mt mb-5">
               Trở thành tài xế taxi cho công ty Taxi Tây Ninh mang lại nhiều lợi ích hấp dẫn. Chúng tôi cam kết môi trường làm việc chuyên nghiệp và thân thiện, đào tạo liên tục để nâng cao kỹ năng lái xe và giao tiếp. Tài xế nhận mức thu nhập ổn định và có cơ hội kiếm thêm từ tiền thưởng và khách hàng thường xuyên. Tham gia công ty Taxi Tây Ninh, bạn trở thành phần của đội ngũ đáng tin cậy, xây dựng dịch vụ vận chuyển taxi chất lượng và tin cậy trong cộng đồng.
               </p>
-              {/* <a href="about.html" className>
-                Xem thêm về chúng tôi
-              </a> */}
+              <Link to="/partner-page" className="mx-auto d-block col-8 text-center">
+                Trở thành đối tác với chúng tôi
+              </Link>
             </div>
           </div>
         </div>
