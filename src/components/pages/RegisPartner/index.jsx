@@ -3,9 +3,12 @@ import "../../../css/booking.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import InputBlock from "../../Shared/InputBlock";
+import regisImg from "/regisImage.png";
 
 function RegisPartner() {
   const dispatch = useDispatch();
+  let LoginRender = "";
+  let account = JSON.parse(sessionStorage.getItem("account"));
   let dayInput = [];
   let monthInput = [];
   let yearInput = [];
@@ -19,12 +22,11 @@ function RegisPartner() {
   const [birthDay, setBirthDay] = useState();
   const [birthMonth, setBirthMonth] = useState();
   const [birthYear, setBirthYear] = useState();
-  const [birthdayOfDriver, setBirthdayOfDriver] = useState()
-  const [fullNameInput, setfullNameInput] = useState()
-  const [idNumberInput, setIdNumberInput] = useState()
-  const [phoneNumberInput, setPhoneNumberInput] = useState()
-  const [addressInput, setAddressInput] = useState()
-
+  const [birthdayOfDriver, setBirthdayOfDriver] = useState();
+  const [fullNameInput, setfullNameInput] = useState();
+  const [idNumberInput, setIdNumberInput] = useState();
+  const [phoneNumberInput, setPhoneNumberInput] = useState();
+  const [addressInput, setAddressInput] = useState();
 
   useEffect(() => {
     setRegisDriver({
@@ -33,24 +35,30 @@ function RegisPartner() {
       cmnd: idNumberInput,
       phone: phoneNumberInput,
       address: addressInput,
-    })
-  }, [fullNameInput, birthdayOfDriver, phoneNumberInput, idNumberInput, addressInput])
+    });
+  }, [
+    fullNameInput,
+    birthdayOfDriver,
+    phoneNumberInput,
+    idNumberInput,
+    addressInput,
+  ]);
 
-  // Lấy họ và tên 
-  function getFullName(e){
-    setfullNameInput(e.target.value)
+  // Lấy họ và tên
+  function getFullName(e) {
+    setfullNameInput(e.target.value);
   }
   // Lây số CMND
-  function getIdNumber(e){
-    setIdNumberInput(e.target.value)
+  function getIdNumber(e) {
+    setIdNumberInput(e.target.value);
   }
   // Lấy số điện thoại
-  function getPhoneNumber(e){
-    setPhoneNumberInput(e.target.value)
+  function getPhoneNumber(e) {
+    setPhoneNumberInput(e.target.value);
   }
   // Lấy địa chỉ
-  function getAddress(e){
-    setAddressInput(e.target.value)
+  function getAddress(e) {
+    setAddressInput(e.target.value);
   }
 
   // Xử lí ngày tháng năm sinh
@@ -64,25 +72,35 @@ function RegisPartner() {
     setBirthYear(e.target.value.toString());
   }
   useEffect(() => {
-    setBirthdayOfDriver(birthDay + '/' + birthMonth + '/' + birthYear)
-  }, [birthDay, birthMonth, birthYear])
-  
-
+    setBirthdayOfDriver(birthDay + "/" + birthMonth + "/" + birthYear);
+  }, [birthDay, birthMonth, birthYear]);
 
   //handleSubmit
   const handleSubmit = (e) => {
     e.preventDefault();
-    sendRegisDriverData(regisDriver)
+    sendRegisDriverData(regisDriver);
   };
 
   for (let i = 1; i <= 31; i++) {
-    dayInput.push(<option key={i} value={i}>{i}</option>);
+    dayInput.push(
+      <option key={i} value={i}>
+        {i}
+      </option>
+    );
   }
   for (let i = 1; i <= 12; i++) {
-    monthInput.push(<option key={i} value={i}>{i}</option>);
+    monthInput.push(
+      <option key={i} value={i}>
+        {i}
+      </option>
+    );
   }
   for (let i = 1950; i <= 2023; i++) {
-    yearInput.push(<option key={i} value={i}>{i}</option>);
+    yearInput.push(
+      <option key={i} value={i}>
+        {i}
+      </option>
+    );
   }
 
   const sendRegisDriverData = async (regisDriver) => {
@@ -107,87 +125,108 @@ function RegisPartner() {
       console.error("Lỗi:", error);
     }
   };
-  
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  return (
-    <section id="booking">
-      <div className="div-booking mx-auto">
-        <h2 className="text-white">Đăng kí thành tài xế</h2>
-        <form onSubmit={handleSubmit}>
-          <InputBlock
-            labelContent="Họ và tên"
-            idInput="FullName"
-            // valueInput={regisDriver.FullName}
-            handleChange={getFullName}
-          ></InputBlock>
-          <hr className="elem-group-hr" />
-          <InputBlock
-            labelContent="Số CMND/CCCD"
-            typeInput="number"
-            idInput="IDPerson"
-            // valueInput={regisDriver.IDPerson}
-            handleChange={getIdNumber}
-          ></InputBlock>
-          <InputBlock
-            labelContent="Số điện thoại"
-            typeInput="number"
-            idInput="phonenumber"
-            // valueInput={regisDriver.phonenumber}
-            handleChange={getPhoneNumber}
-          ></InputBlock>
-          <div className="elem-group">
-            <label className="elem-group-label d-block text-white">
-              Ngày tháng năm sinh
-            </label>
-            <select
-              id="dayOfBirth"
-              name="dayOfBirth"
-              required
-              onChange={getBirthDay}
-              className="rounded col-4 py-2"
-            >
-              {dayInput}
-            </select>
-            <select
-              id="monthOfBirth"
-              name="monthOfBirth"
-              required
-              onChange={getBirthMonth}
-              className="rounded col-4 py-2"
-            >
-              {monthInput}
-            </select>
-            <select
-              id="yearOfBirth"
-              name="yearOfBirth"
-              required
-              onChange={getBirthYear}
-              className="rounded col-4 py-2"
-            >
-              {yearInput}
-            </select>
-          </div>
-          <hr className="elem-group-hr" />
-          <InputBlock
-            labelContent="Địa chỉ"
-            idInput="address"
-            // valueInput={regisDriver.address}
-            handleChange={getAddress}
-          ></InputBlock>
-          <button className="btn-submit text-white" type="submit">
-            Đặt xe
-          </button>
-          <button className="btn-submit text-white mt-4" type="submit">
-            <Link to="/">Quay lại trang chủ</Link>
-          </button>
-        </form>
-      </div>
-    </section>
-  );
+  // Kiểm tra xem đã đăng nhập hay chưa
+  if (account) {
+    LoginRender = (
+      <section id="booking">
+        <div className="div-booking mx-auto">
+          <h2 className="text-white">Đăng kí thành tài xế</h2>
+          <form onSubmit={handleSubmit}>
+            <InputBlock
+              labelContent="Họ và tên"
+              idInput="FullName"
+              // valueInput={regisDriver.FullName}
+              handleChange={getFullName}
+            ></InputBlock>
+            <hr className="elem-group-hr" />
+            <InputBlock
+              labelContent="Số CMND/CCCD"
+              typeInput="number"
+              idInput="IDPerson"
+              // valueInput={regisDriver.IDPerson}
+              handleChange={getIdNumber}
+            ></InputBlock>
+            <InputBlock
+              labelContent="Số điện thoại"
+              typeInput="number"
+              idInput="phonenumber"
+              // valueInput={regisDriver.phonenumber}
+              handleChange={getPhoneNumber}
+            ></InputBlock>
+            <div className="elem-group">
+              <label className="elem-group-label d-block text-white">
+                Ngày tháng năm sinh
+              </label>
+              <select
+                id="dayOfBirth"
+                name="dayOfBirth"
+                required
+                onChange={getBirthDay}
+                className="rounded col-4 py-2"
+              >
+                {dayInput}
+              </select>
+              <select
+                id="monthOfBirth"
+                name="monthOfBirth"
+                required
+                onChange={getBirthMonth}
+                className="rounded col-4 py-2"
+              >
+                {monthInput}
+              </select>
+              <select
+                id="yearOfBirth"
+                name="yearOfBirth"
+                required
+                onChange={getBirthYear}
+                className="rounded col-4 py-2"
+              >
+                {yearInput}
+              </select>
+            </div>
+            <hr className="elem-group-hr" />
+            <InputBlock
+              labelContent="Địa chỉ"
+              idInput="address"
+              // valueInput={regisDriver.address}
+              handleChange={getAddress}
+            ></InputBlock>
+            <button className="btn-submit text-white" type="submit">
+              Đặt xe
+            </button>
+            <button className="btn-submit text-white mt-4" type="submit">
+              <Link to="/">Quay lại trang chủ</Link>
+            </button>
+          </form>
+        </div>
+      </section>
+    );
+  } else {
+    LoginRender = (
+      <>
+        <div className="col-5 mx-auto">
+          <img src={regisImg} className="d-block w-50 mx-auto" />
+          <h2 className="text-center">
+            Bạn cần đăng nhập để thực hiện đăng ký làm tài xế
+          </h2>
+          <p className="text-center">
+            Đăng nhập{" "}
+            <Link className="text-danger" to="/login">
+              tại đây
+            </Link>
+          </p>
+        </div>
+      </>
+    );
+  }
+
+  return <>{LoginRender}</>;
 }
 
 export default RegisPartner;

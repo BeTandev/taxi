@@ -17,7 +17,7 @@ function App() {
   let account = JSON.parse(sessionStorage.getItem("account"));
   useEffect(() => {
     sendLoginData(account)
-  }, [])
+  }, [account])
 
   const sendLoginData = async (account) => {
     try {
