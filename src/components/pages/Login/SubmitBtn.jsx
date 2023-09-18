@@ -1,10 +1,11 @@
 import React from "react";
 
-function SubmitBtn(){
+function SubmitBtn(props){
+  const {content} = props
     return(
         <div className="group">
         <button type="submit" className="button">
-          Đăng nhập
+          {content}
         </button>
       </div>
     )

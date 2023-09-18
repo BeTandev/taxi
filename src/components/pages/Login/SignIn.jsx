@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getUsernameLogin } from "../../../store/UsernameLoginSlice";
@@ -35,11 +35,10 @@ function SignIn() {
 
       if (response.ok) {
         navigate("/");
-        // alert("Đăng nhập thành công");
         dispatch(getUsernameLogin(user.username));
-        // sessionStorage.setItem('account', user);
+        sessionStorage.setItem('account', JSON.stringify(user));
       } else {
-        alert("Vui lòng kiểm tra lại tài khoản và mạt khẩu của bạn");
+        alert("Vui lòng kiểm tra lại tài khoản và mật khẩu của bạn");
       }
     } catch (error) {
       console.error("Lỗi:", error);
@@ -63,7 +62,7 @@ function SignIn() {
         handleInput={handleChange}
       ></SignInput>
 
-      <SubmitBtn></SubmitBtn>
+      <SubmitBtn content="Đăng nhập"></SubmitBtn>
 
       <BackHomeBtn></BackHomeBtn>
 

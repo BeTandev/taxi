@@ -88,7 +88,7 @@ function SignUp() {
         handleInput={handleChange}
       ></SignInput>
 
-      <SubmitBtn></SubmitBtn>
+      <SubmitBtn content="Đăng ký"></SubmitBtn>
 
       <BackHomeBtn></BackHomeBtn>
 

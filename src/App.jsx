@@ -7,9 +7,37 @@ import MyTeamPage from "./components/pages/MyTeamPage";
 import Booking from "./components/pages/Booking";
 import PartnerPage from "./components/pages/PartnerPgae";
 import RegisPartner from "./components/pages/RegisPartner";
+import { getUsernameLogin } from "./store/UsernameLoginSlice";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 
 function App() {
+  const dispatch = useDispatch()
+  let account = JSON.parse(sessionStorage.getItem("account"));
+  useEffect(() => {
+    sendLoginData(account)
+  }, [])
+
+  const sendLoginData = async (account) => {
+    try {
+      const response = await fetch("https://apiuser-zavj.onrender.com/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(account),
+      });
+
+      if (response.ok) {
+        dispatch(getUsernameLogin(account.username));
+      } else {
+        alert("Vui lòng kiểm tra lại tài khoản và mật khẩu của bạn");
+      }
+    } catch (error) {
+      console.error("Lỗi:", error);
+    }
+  };
   return (
     <div>
       <Routes>
