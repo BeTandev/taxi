@@ -36,7 +36,7 @@ function SignIn() {
       if (response.ok) {
         navigate("/");
         dispatch(getUsernameLogin(user.username));
-        sessionStorage.setItem('account', JSON.stringify(user));
+        sessionStorage.setItem("account", JSON.stringify(user));
       } else {
         alert("Vui lòng kiểm tra lại tài khoản và mật khẩu của bạn");
       }
@@ -61,6 +61,13 @@ function SignIn() {
         valueInput={user.password}
         handleInput={handleChange}
       ></SignInput>
+
+      <div className="group">
+        <input id="check" type="checkbox" className="check" defaultChecked />
+        <label htmlFor="check">
+          <span className="icon" /> Giữ đăng nhập cho lần truy cập sau
+        </label>
+      </div>
 
       <SubmitBtn content="Đăng nhập"></SubmitBtn>
 

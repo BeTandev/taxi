@@ -16,11 +16,11 @@ function Login() {
           defaultChecked
         />
         <label htmlFor="tab-1" className="tab">
-          Sign In
+          Đăng nhập
         </label>
         <input id="tab-2" type="radio" name="tab" className="sign-up" />
         <label htmlFor="tab-2" className="tab">
-          Sign Up
+          Đăng ký
         </label>
         <div className="login-form">
           <SignIn></SignIn>
