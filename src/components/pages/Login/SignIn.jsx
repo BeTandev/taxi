@@ -9,6 +9,7 @@ import SubmitBtn from "./SubmitBtn";
 function SignIn() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [checkSaveLogin, setCheckSaveLogin] = useState(true);
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -36,7 +37,12 @@ function SignIn() {
       if (response.ok) {
         navigate("/");
         dispatch(getUsernameLogin(user.username));
-        sessionStorage.setItem("account", JSON.stringify(user));
+        if (checkSaveLogin) {
+          localStorage.setItem("account", JSON.stringify(user));
+          sessionStorage.setItem("account", JSON.stringify(user));
+        } else {
+          sessionStorage.setItem("account", JSON.stringify(user));
+        }
       } else {
         alert("Vui lòng kiểm tra lại tài khoản và mật khẩu của bạn");
       }
@@ -44,6 +50,14 @@ function SignIn() {
       console.error("Lỗi:", error);
     }
   };
+
+  function checkCheckBox(e) {
+    if (e.target.checked) {
+      setCheckSaveLogin(true);
+    } else {
+      setCheckSaveLogin(false);
+    }
+  }
 
   return (
     <form className="sign-in-htm" onSubmit={handleSubmit}>
@@ -63,7 +77,13 @@ function SignIn() {
       ></SignInput>
 
       <div className="group">
-        <input id="check" type="checkbox" className="check" defaultChecked />
+        <input
+          id="check"
+          type="checkbox"
+          className="check"
+          defaultChecked
+          onChange={checkCheckBox}
+        />
         <label htmlFor="check">
           <span className="icon" /> Giữ đăng nhập cho lần truy cập sau
         </label>

@@ -14,7 +14,14 @@ import { useDispatch } from "react-redux";
 
 function App() {
   const dispatch = useDispatch()
-  let account = JSON.parse(sessionStorage.getItem("account"));
+  let account = ""
+  const dataLogin = JSON.parse(localStorage.getItem("account"));
+  if(dataLogin){
+    account = JSON.parse(localStorage.getItem("account"));
+  }else{
+    account = JSON.parse(sessionStorage.getItem("account"));
+  }
+
   useEffect(() => {
     sendLoginData(account)
   }, [account])
@@ -31,6 +38,7 @@ function App() {
 
       if (response.ok) {
         dispatch(getUsernameLogin(account.username));
+        sessionStorage.setItem("account", JSON.stringify(user));
       } else {
         alert("Vui lòng kiểm tra lại tài khoản và mật khẩu của bạn");
       }

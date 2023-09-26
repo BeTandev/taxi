@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NavbarItem from "./NavbarItem";
 import ContractItem from "../Shared/ContractItem";
-import { Dropdown } from "react-bootstrap";
+import { Dropdown, Navbar } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 function SecondHeader() {
@@ -69,62 +69,51 @@ function SecondHeader() {
       </div>
       <div className="header_bottom">
         <div className="container-fluid">
-          <nav className="navbar navbar-expand-lg custom_nav-container ">
-            <Link to="/" className="navbar-brand text-white">
-              Finter
-            </Link>
-            <Dropdown className="dropdown-custom">
-              <Dropdown.Toggle
-                variant="secondary"
-                id="dropdown-basic"
-                className="dropdown-custom"
-              >
-                Menu
-              </Dropdown.Toggle>
+        <nav className="navbar navbar-expand-lg custom_nav-container ">
+      <Link to="/" className="navbar-brand text-white">
+        Finter
+      </Link>
+      <Dropdown className="dropdown-custom">
+        <Dropdown.Toggle
+          variant="secondary"
+          id="dropdown-basic"
+          className="dropdown-custom"
+        >
+          Menu
+        </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                <Dropdown.Item className="dropdown-item-custom">
-                  <Link to="/">Trang Chủ</Link>
-                </Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom">
-                  <Link to="/about-us">About Us</Link>
-                </Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom">
-                  <Link to="/uu-dai">Ưu đãi</Link>
-                </Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom">
-                  <Link to="/my-team">Thành Viên</Link>
-                </Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom">
-                  <Link to="/partner">Đối Tác</Link>
-                </Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-custom">
-                  <Link to="/login">Đăng nhập</Link>
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <div
-              className="collapse navbar-collapse"
-              id="navbarSupportedContent"
-            >
-              <ul className="navbar-nav">
-                <NavbarItem connect="/" content="Trang Chủ"></NavbarItem>
-                <NavbarItem connect="/about-us" content="About Us"></NavbarItem>
-                <NavbarItem connect="/uu-dai" content="Ưu đãi"></NavbarItem>
-                <NavbarItem
-                  connect="/my-team"
-                  content="Thành Viên"
-                ></NavbarItem>
-                <NavbarItem connect="/partner" content="Đối Tác"></NavbarItem>
-                {/* <NavbarItem
-                  connect="/login"
-                  content="Đăng nhập"
-                  isShowLoginIcon
-                ></NavbarItem> */}
-                {loginbtn}
-              </ul>
-            </div>
-          </nav>
+        <Dropdown.Menu>
+          <Dropdown.Item className="dropdown-item-custom">
+            <Link to="/">Trang Chủ</Link>
+          </Dropdown.Item>
+          <Dropdown.Item className="dropdown-item-custom">
+            <Link to="/about-us">About Us</Link>
+          </Dropdown.Item>
+          <Dropdown.Item className="dropdown-item-custom">
+            <Link to="/uu-dai">Ưu đãi</Link>
+          </Dropdown.Item>
+          <Dropdown.Item className="dropdown-item-custom">
+            <Link to="/my-team">Thành Viên</Link>
+          </Dropdown.Item>
+          <Dropdown.Item className="dropdown-item-custom">
+            <Link to="/partner">Đối Tác</Link>
+          </Dropdown.Item>
+          <Dropdown.Item className="dropdown-item-custom">
+            <Link to="/login">Đăng nhập</Link>
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav">
+          <NavbarItem connect="/" content="Trang Chủ"></NavbarItem>
+          <NavbarItem connect="/about-us" content="About Us"></NavbarItem>
+          <NavbarItem connect="/uu-dai" content="Ưu đãi"></NavbarItem>
+          <NavbarItem connect="/my-team" content="Thành Viên"></NavbarItem>
+          <NavbarItem connect="/partner" content="Đối Tác"></NavbarItem>
+          {loginbtn}
+        </ul>
+      </div>
+    </nav>
         </div>
       </div>
     </header>

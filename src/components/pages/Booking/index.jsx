@@ -6,7 +6,6 @@ import InputBlock from "../../Shared/InputBlock";
 
 function Booking() {
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
   const [booking, setBooking] = useState({
     name: "",
     phone: "",
