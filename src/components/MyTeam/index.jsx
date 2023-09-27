@@ -4,25 +4,25 @@ const members = [
   {
     id: 1,
     name: "Trần Lê Nhứt Tân",
-    position: "Chủ tịch hội đồng quản trị",
+    position: "Fontend và thiết kế hệ thống",
     avatar: '/t1.jpg',
   },
   {
     id: 2,
     name: "Hoàng Hưng Phát",
-    position: `NV "chăm sóc" khách hàng`,
+    position: `Backend và Database`,
     avatar: '/t2.jpg',
   },
   {
     id: 3,
     name: "Nguyễn Thành Long",
-    position: "Cu li cấp cao",
+    position: "Backend và Database",
     avatar: '/t3.jpg',
   },
   {
     id: 4,
     name: "Huỳnh Võ Công Lãm",
-    position: "Bộ binh cơ giới",
+    position: "hỗ trợ Front và Backend",
     avatar: '/t3.jpg',
   },
 ];

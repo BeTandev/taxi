@@ -1,0 +1,121 @@
+$green-custom: #2c7873;
+$radius-custom: 7px;
+$transition-custom: 0.3s;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.menu {
+  width: 300px;
+  height: 100vh;
+  background-color: #ffffff;
+  font-family: "Times New Roman", Times, serif;
+  padding: 10px;
+
+  div {
+    &:hover {
+      background-color: $green-custom;
+      color: white;
+    }
+
+    i {
+      margin-right: 10px;
+      padding: 20px 20px;
+    }
+
+    p {
+      font-size: 20px;
+      margin-top: 18px;
+    }
+  }
+}
+
+.title-menu {
+  font-size: 30px;
+}
+
+#other {
+  background-color: #e4e9f7;
+  padding: 0 0 30px 0px;
+  margin-left: 300px;
+  height: 100vh;
+  overflow-y: scrolls;
+}
+
+.back-homepage {
+  height: 70px;
+  background-color: #ffffff;
+
+  a {
+    width: fit-content;
+    margin: 25px 10% 0 auto;
+    padding: $radius-custom 20px;
+    border: 1px solid $green-custom !important;
+    border-radius: $radius-custom;
+    transition: $transition-custom;
+    background-color: $green-custom;
+    color: white!important;
+    outline: none;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: transparent;
+      border: 1px solid $green-custom !important;
+      color: black!important;
+    }
+  }
+}
+
+.show-information {
+  padding: 20px;
+  margin: 40px 0 0 20px;
+
+  button {
+    margin-right: 15%;
+    color: white;
+    background-color: $green-custom;
+    border-radius: $radius-custom;
+    padding: 10px 15px;
+    transition: $transition-custom;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: transparent;
+      border: 1px solid $green-custom !important;
+      color: black;
+      margin-right: 14.5%;
+    }
+  }
+}
+
+hr {
+  width: 90%;
+  background-color: $green-custom;
+  margin: 0 0 50px 40px;
+}
+
+.message-item {
+  width: 80%;
+  background-color: #ffffff;
+  margin-left: 40px;
+  border-radius: $radius-custom;
+  padding: 10px 25px;
+}
+
+.select{
+  background-color: $green-custom;
+  color: white;
+}

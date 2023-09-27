@@ -99,7 +99,7 @@ function Contract() {
                   handleChange={handleChange}
                 ></InputBlock>
                 <button className="contract-btn" type="submit">
-                  Đặt xe
+                  Để lại lời nhắn cho chúng tôi
                 </button>
               </form>
             </div>

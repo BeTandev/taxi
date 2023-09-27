@@ -10,6 +10,7 @@ import RegisPartner from "./components/pages/RegisPartner";
 import { getUsernameLogin } from "./store/UsernameLoginSlice";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import MessagePage from "./components/pages/AdminPage/MessagePage.jsx";
 
 
 function App() {
@@ -23,7 +24,9 @@ function App() {
   }
 
   useEffect(() => {
-    sendLoginData(account)
+    if(account){
+      sendLoginData(account)
+    }
   }, [account])
 
   const sendLoginData = async (account) => {
@@ -57,6 +60,7 @@ function App() {
         <Route path="/booking" element={<Booking></Booking>}></Route>
         <Route path="/partner" element={<PartnerPage></PartnerPage>}></Route>
         <Route path="/partner-page" element={<RegisPartner></RegisPartner>}></Route>
+        <Route path="/admin/message-page" element={<MessagePage></MessagePage>}></Route>
       </Routes>
       <br></br>
     </div>

@@ -27,7 +27,7 @@ function SliderSection() {
                   <div className="detail-box">
                     <h1 style={{ lineHeight: "1.7" }}>
                       Dịch Vụ <br />
-                      Tắc Suy
+                      Taxi Tây Ninh
                     </h1>
                     <p>Hãy để chúng tôi là một phần trên con đường của bạn</p>
                     <div className="btn-box">

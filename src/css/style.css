@@ -1022,7 +1022,8 @@ a:focus {
   height: 40px;
 }
 .contract-btn{
-  width: 200px;
+  /* width: 200px; */
+  padding: 0 15px;
   height: 50px;
   background-color: transparent;
   margin: auto;
@@ -1032,6 +1033,5 @@ a:focus {
 .contract-btn:hover{
   border: 1px solid green;
   color: green;
-  width: 220px;
-  height: 60px;
+  transform: scale(1.05)
 }
