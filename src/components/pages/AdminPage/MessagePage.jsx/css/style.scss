@@ -25,7 +25,9 @@ a {
   font-family: "Times New Roman", Times, serif;
   padding: 10px;
 
-  div {
+  a {
+    cursor: pointer;
+     
     &:hover {
       background-color: $green-custom;
       color: white;
