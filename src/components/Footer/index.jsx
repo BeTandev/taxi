@@ -1,5 +1,6 @@
 import React from "react";
 import ContractItem from "../Shared/ContractItem";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -9,9 +10,9 @@ function Footer() {
           <div className="info_top">
             <div className="row">
               <div className="col-lg-4 ">
-                <a className="navbar-brand" href="index.html">
-                  Finter
-                </a>
+                <Link to="/">
+                  Taxi Tây Ninh
+                </Link>
               </div>
               <div className="col-lg-5 ">
                 <div className="info_contact">
