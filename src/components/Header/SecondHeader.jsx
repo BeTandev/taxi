@@ -44,20 +44,20 @@ function SecondHeader() {
             <ContractItem
               connect=""
               icon="fa fa-envelope"
-              content="nhuttantranle@gmail.com"
+              content="taxi.tayninh12@gmail.com"
             ></ContractItem>
           </div>
           <div className="social_box">
             <ContractItem
-              connect="https://www.facebook.com/"
+              connect="https://www.facebook.com/taxitayninh12/"
               icon="fa fa-facebook"
             ></ContractItem>
             <ContractItem
-              connect="https://www.x.com/"
+              connect="https://twitter.com/NinhTaxi21829"
               icon="fa fa-twitter"
             ></ContractItem>
             <ContractItem
-              connect="https://www.linkedin.com/"
+              connect="https://www.linkedin.com/in/t%C3%A2y-ninh-taxi-95a737293/"
               icon="fa fa-linkedin"
             ></ContractItem>
             <ContractItem
