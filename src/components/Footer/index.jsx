@@ -32,7 +32,7 @@ function Footer() {
             <div className="row">
               <div className="col-lg-4 col-md-6">
                 <div className="info_detail">
-                  <h5>Tắc Suy Tây Ninh</h5>
+                  <h5>Taxi Tây Ninh</h5>
                   <p>
                   Taxi Tây Ninh là công ty taxi hàng đầu, cam kết sự tin cậy, chuyên nghiệp và dịch vụ an toàn, nhanh chóng, với đội ngũ tài xế chuyên nghiệp, xe hiện đại và giá cả hợp lý.
                   </p>

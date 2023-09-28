@@ -71,7 +71,7 @@ function SecondHeader() {
         <div className="container-fluid">
         <nav className="navbar navbar-expand-lg custom_nav-container ">
       <Link to="/" className="navbar-brand text-white">
-        Finter
+        TTN
       </Link>
       <Dropdown className="dropdown-custom">
         <Dropdown.Toggle
