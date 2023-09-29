@@ -6,9 +6,9 @@ function Preferential() {
     <section className="service_section layout_padding">
       <div className="container">
         <div className="heading_container heading_center ">
-          <h2>Ưu Đãi</h2>
+          <h2>Cam kết</h2>
           <p className="col-lg-8 px-0">
-            Những chương trình ưu đãi trong tháng 9 của chúng tôi
+           Cam kết của chúng tôi
           </p>
         </div>
         <div className="service_container service_container_custom">
