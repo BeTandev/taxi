@@ -8,7 +8,7 @@ function Preferential() {
         <div className="heading_container heading_center ">
           <h2>Cam kết</h2>
           <p className="col-lg-8 px-0">
-           Cam kết của chúng tôi
+           Chúng tôi cam kết
           </p>
         </div>
         <div className="service_container service_container_custom">
