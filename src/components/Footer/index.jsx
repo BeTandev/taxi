@@ -21,9 +21,9 @@ function Footer() {
               </div>
               <div className="col-lg-3 d-flex justify-content-start">
                 <div className="social_box">
-                  <ContractItem connect="https://www.facebook.com/" icon="fa fa-facebook"></ContractItem>
-                  <ContractItem connect="https://www.x.com/" icon="fa fa-twitter"></ContractItem>
-                  <ContractItem connect="https://www.linkedin.com/" icon="fa fa-linkedin"></ContractItem>
+                  <ContractItem connect="https://www.facebook.com/taxitayninh12/" icon="fa fa-facebook"></ContractItem>
+                  <ContractItem connect="https://twitter.com/NinhTaxi21829" icon="fa fa-twitter"></ContractItem>
+                  <ContractItem connect="https://www.linkedin.com/in/t%C3%A2y-ninh-taxi-95a737293" icon="fa fa-linkedin"></ContractItem>
                   <ContractItem connect="https://www.instagram.com/" icon="fa fa-instagram"></ContractItem>
                 </div>
               </div>
@@ -52,7 +52,7 @@ function Footer() {
                   <h5>Useful links</h5>
                   <ul className="info_menu">
                     <li>
-                      <ContractItem connect="/" content="Trang chủ"></ContractItem>
+                      <ContractItem connect="/" content="Trang Chủ"></ContractItem>
                     </li>
                     <li>
                       <ContractItem connect="/about-us" content="About Us"></ContractItem>

@@ -197,10 +197,10 @@ function RegisPartner() {
               // valueInput={regisDriver.address}
               handleChange={getAddress}
             ></InputBlock>
-            <button className="btn-submit text-white" type="submit">
-              Đặt xe
+            <button className="btn-submit background-btn text-white" type="submit">
+              Đăng ký
             </button>
-            <button className="btn-submit text-white mt-4" type="submit">
+            <button className="btn-submit background-btn text-white mt-4" type="submit">
               <Link to="/">Quay lại trang chủ</Link>
             </button>
           </form>

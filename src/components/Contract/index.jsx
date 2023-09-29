@@ -48,6 +48,12 @@ function Contract() {
     }
   };
 
+  // function checkPhoneNumber(e){
+  //   if(e.target.value > 10){
+  //     return false
+  //   }
+  // }
+
 
   return (
     <section id="contract" className="mb-5">
@@ -91,6 +97,7 @@ function Contract() {
                   valueInput={messages.phonenumber}
                   handleChange={handleChange}
                 ></InputBlock>
+                <p className="text-danger warning">* Số điện thoại phải đủ 10 số</p>
                 <InputBlock
                   isTextDark
                   labelContent="Lời nhắn bạn muốn để lại:"

@@ -1035,3 +1035,17 @@ a:focus {
   color: green;
   transform: scale(1.05)
 }
+
+.warning{
+  font-size: 14px;
+  margin-top: -15px;
+}
+
+.background-btn{
+  background-color: #2c7873!important;
+  color: white!important;
+}
+
+.background-btn a{
+  color: white!important;
+}
