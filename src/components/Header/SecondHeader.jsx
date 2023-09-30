@@ -90,7 +90,7 @@ function SecondHeader() {
             <Link to="/about-us">About Us</Link>
           </Dropdown.Item>
           <Dropdown.Item className="dropdown-item-custom">
-            <Link to="/uu-dai">Ưu đãi</Link>
+            <Link to="/uu-dai">Cam kết</Link>
           </Dropdown.Item>
           <Dropdown.Item className="dropdown-item-custom">
             <Link to="/my-team">Thành Viên</Link>

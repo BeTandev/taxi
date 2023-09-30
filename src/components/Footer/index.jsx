@@ -58,7 +58,7 @@ function Footer() {
                       <ContractItem connect="/about-us" content="About Us"></ContractItem>
                     </li>
                     <li>
-                      <ContractItem connect="/uu-dai" content="Ưu đãi"></ContractItem>
+                      <ContractItem connect="/uu-dai" content="Cam kết"></ContractItem>
                     </li>
                     <li>
                       <ContractItem connect="/my-team" content="Thành Viên"></ContractItem>
