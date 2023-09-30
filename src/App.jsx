@@ -11,6 +11,7 @@ import { getUsernameLogin } from "./store/UsernameLoginSlice";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import MessagePage from "./components/pages/AdminPage/MessagePage.jsx";
+import './css/style.scss'
 
 
 function App() {

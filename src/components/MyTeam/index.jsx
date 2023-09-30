@@ -22,7 +22,7 @@ const members = [
   {
     id: 4,
     name: "Huỳnh Võ Công Lãm",
-    position: "hỗ trợ Front và Backend",
+    position: "Tester và hỗ trợ",
     avatar: '/t3.jpg',
   },
 ];
