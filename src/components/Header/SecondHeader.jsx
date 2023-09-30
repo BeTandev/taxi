@@ -107,7 +107,7 @@ function SecondHeader() {
         <ul className="navbar-nav">
           <NavbarItem connect="/" content="Trang Chủ"></NavbarItem>
           <NavbarItem connect="/about-us" content="About Us"></NavbarItem>
-          <NavbarItem connect="/uu-dai" content="Ưu đãi"></NavbarItem>
+          <NavbarItem connect="/uu-dai" content="Cam kết"></NavbarItem>
           <NavbarItem connect="/my-team" content="Thành Viên"></NavbarItem>
           <NavbarItem connect="/partner" content="Đối Tác"></NavbarItem>
           {loginbtn}
