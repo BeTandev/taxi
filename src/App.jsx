@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import MessagePage from "./components/pages/AdminPage/MessagePage.jsx";
 import './css/style.scss'
+import UserPage from "./components/pages/AdminPage/UsersPage";
 
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
         <Route path="/partner" element={<PartnerPage></PartnerPage>}></Route>
         <Route path="/partner-page" element={<RegisPartner></RegisPartner>}></Route>
         <Route path="/admin/message-page" element={<MessagePage></MessagePage>}></Route>
+        <Route path="/admin/user-page"  element={<UserPage></UserPage>}></Route>
       </Routes>
       <br></br>
     </div>
