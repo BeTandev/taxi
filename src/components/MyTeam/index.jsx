@@ -4,7 +4,7 @@ const members = [
   {
     id: 1,
     name: "Trần Lê Nhứt Tân",
-    position: "Frontend và thiết kế hệ thống",
+    position: "Frontend và hệ thống",
     avatar: '/t1.jpg',
   },
   {
