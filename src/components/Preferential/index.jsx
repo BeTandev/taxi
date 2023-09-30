@@ -16,9 +16,6 @@ function Preferential() {
             <SimpleSlider></SimpleSlider>
           </div>
         </div>
-        <div className="btn-box">
-          <a>Xem nhiều ưu đãi hơn</a>
-        </div>
       </div>
     </section>
   );
