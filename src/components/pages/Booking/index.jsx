@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "../../../css/booking.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import InputBlock from "../../Shared/InputBlock";
+import "../../../css/booking.scss"
 
 function Booking() {
   const dispatch = useDispatch();

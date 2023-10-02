@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../../css/booking.css";
+import "../../../css/booking.scss";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import InputBlock from "../../Shared/InputBlock";
