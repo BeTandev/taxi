@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import MenuItem from "../../../Shared/MenuItem";
 import { fetchUsers } from "../../../../store/UsersSlice";
 import UserInformationItem from "./UserInformationItem";
+import RightSideAdminPage from "../../../Shared/RightSideAdminPage";
 
 function UserPage() {
     const dispatch = useDispatch();
@@ -49,16 +50,7 @@ function UserPage() {
         </div>
       </section>
       <section id="other">
-        <div className="back-homepage w-100">
-          <a className="d-block">Quay lại trang chủ</a>
-        </div>
-        <div className="show-information d-flex justify-content-between align-items-center">
-          <h2>Dữ liệu người dùng</h2>
-          <button className="border-0" onClick={loadUsers}>
-            Tải lại dữ liệu
-          </button>
-        </div>
-        <hr />
+        <RightSideAdminPage dataName="Dữ liệu người dùng" loadHandle={loadUsers}></RightSideAdminPage>
         <div className="wrap-user-information-item">
         {usersList.map((state, index) => (
           <UserInformationItem data={state}></UserInformationItem>

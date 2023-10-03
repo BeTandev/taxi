@@ -14,6 +14,7 @@ import MessagePage from "./components/pages/AdminPage/MessagePage.jsx";
 import './css/style.scss'
 import './css/responsive.scss'
 import UserPage from "./components/pages/AdminPage/UsersPage";
+import BookingPage from "./components/pages/AdminPage/BookingPage.jsx";
 
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
         <Route path="/partner-page" element={<RegisPartner></RegisPartner>}></Route>
         <Route path="/admin/message-page" element={<MessagePage></MessagePage>}></Route>
         <Route path="/admin/user-page"  element={<UserPage></UserPage>}></Route>
+        <Route path="/admin/booking-page"  element={<BookingPage></BookingPage>}></Route>
       </Routes>
       <br></br>
     </div>

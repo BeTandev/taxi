@@ -1,23 +1,19 @@
 import React, { useEffect } from "react";
-import "./css/style.scss";
-import MessageItem from "./MessageItem";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchMessage } from "../../../../store/MessageSlice";
 import MenuItem from "../../../Shared/MenuItem";
-import RightSideAdminPage from "../../../Shared/RightSideAdminPage";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBookings } from "../../../../store/BookingSlice";
+import BookingInformationItem from "./BookingInformationItem";
 
-function MessagePage() {
+function BookingPage() {
   const dispatch = useDispatch();
-  const messageList = useSelector((state) => state.MESSAGES.message);
-  console.log(messageList);
-  useEffect(() => {
-    dispatch(fetchMessage());
-  }, []);
+    const bookingsList = useSelector((state) => state.BOOKING.bookingsList);
+    useEffect(() => {
+      dispatch(fetchBookings());
+    }, []);
 
-  function loadMessage() {
-    dispatch(fetchMessage());
-  }
-
+    function loadBookings() {
+      dispatch(fetchBookings());
+    }
   return (
     <div>
       <section id="menu">
@@ -26,7 +22,6 @@ function MessagePage() {
 
           <MenuItem
             iconMenu="fa-solid fa-message"
-            selected
             content="Lời nhắn"
             connect="/admin/message-page"
           ></MenuItem>
@@ -41,6 +36,7 @@ function MessagePage() {
             iconMenu="fa-regular fa-window-maximize"
             content="Cuốc xe"
             connect="/admin/booking-page"
+            selected
           ></MenuItem>
 
           <MenuItem
@@ -48,17 +44,18 @@ function MessagePage() {
             content="Người dùng"
             connect="/admin/user-page"
           ></MenuItem>
-          
         </div>
       </section>
       <section id="other">
-        <RightSideAdminPage dataName="Dữ liệu lời nhắn" loadHandle={loadMessage}></RightSideAdminPage>
-        {messageList.map((state, index) => (
-          <MessageItem data={state}></MessageItem>
+        <RightSideAdminPage dataName="Dữ liệu cuốc xe" loadHandle={loadBookings}></RightSideAdminPage>
+        <div className="wrap-user-information-item">
+        {bookingsList.map((state, index) => (
+          <BookingInformationItem data={state}></BookingInformationItem>
         ))}
+        </div>
       </section>
     </div>
   );
 }
 
-export default MessagePage;
+export default BookingPage
