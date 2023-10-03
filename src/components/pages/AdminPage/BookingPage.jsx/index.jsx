@@ -3,6 +3,7 @@ import MenuItem from "../../../Shared/MenuItem";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBookings } from "../../../../store/BookingSlice";
 import BookingInformationItem from "./BookingInformationItem";
+import RightSideAdminPage from "../../../Shared/RightSideAdminPage";
 
 function BookingPage() {
   const dispatch = useDispatch();
