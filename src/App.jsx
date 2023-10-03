@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import MessagePage from "./components/pages/AdminPage/MessagePage.jsx";
 import './css/style.scss'
+import './css/responsive.scss'
 import UserPage from "./components/pages/AdminPage/UsersPage";
 
 
