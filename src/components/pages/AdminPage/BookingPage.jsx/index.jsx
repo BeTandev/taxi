@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchBookings } from "../../../../store/BookingSlice";
 import BookingInformationItem from "./BookingInformationItem";
 import RightSideAdminPage from "../../../Shared/RightSideAdminPage";
+import '../css/style.scss'
 
 function BookingPage() {
   const dispatch = useDispatch();

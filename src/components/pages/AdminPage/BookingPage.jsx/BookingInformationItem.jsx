@@ -1,5 +1,5 @@
 import React from "react";
-import './css/style.scss'
+
 
 function BookingInformationItem(props) {
     const {id, name, phone, pickupLocation, destination, carType, note} = props.data

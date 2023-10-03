@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./css/style.scss";
+import '../css/style.scss'
 import { useDispatch, useSelector } from "react-redux";
 import MenuItem from "../../../Shared/MenuItem";
 import { fetchUsers } from "../../../../store/UsersSlice";

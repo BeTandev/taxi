@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./css/style.scss";
+import '../css/style.scss'
 import MessageItem from "./MessageItem";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMessage } from "../../../../store/MessageSlice";
