@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import aboutImg from "/contract-img.jpg";
 import InputBlock from "../Shared/InputBlock";
+import { useDispatch } from "react-redux";
 
 function Contract() {
+  const dispatch = useDispatch();
   const [messages, setMessages] = useState({
     name: "",
     email: "",
     phonenumber: "",
     message: "",
   });
+  const phonenumberCheck = messages.phonenumber
 
   const handleChange = (e) => {
     setMessages({ ...messages, [e.target.name]: e.target.value });
@@ -47,13 +50,6 @@ function Contract() {
       console.error("Lỗi:", error);
     }
   };
-
-  // function checkPhoneNumber(e){
-  //   if(e.target.value > 10){
-  //     return false
-  //   }
-  // }
-
 
   return (
     <section id="contract" className="mb-5">
@@ -96,8 +92,8 @@ function Contract() {
                   idInput="phonenumber"
                   valueInput={messages.phonenumber}
                   handleChange={handleChange}
+                  checkPhoneNumber
                 ></InputBlock>
-                <p className="text-danger warning">* Số điện thoại phải đủ 10 số</p>
                 <InputBlock
                   isTextDark
                   labelContent="Lời nhắn bạn muốn để lại:"

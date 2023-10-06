@@ -3,6 +3,7 @@ import messageService from "../services/messageService";
 
 const initialState = {
     message: [],
+    messageData: []
   };
   
   export const fetchMessage = createAsyncThunk(
@@ -12,6 +13,7 @@ const initialState = {
       return response.data;
     }
   );
+
   
   export const messageSlice = createSlice({
     name: "message",

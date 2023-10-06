@@ -1,9 +1,10 @@
 import API from "./api"
 
 const messageService = {
-    message: function(data){
+    message: function(){
         return API.call().get("messages")
-    }
+    },
+
 }
 
 export default messageService
