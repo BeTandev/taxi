@@ -1,15 +1,31 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import SignInput from "../../Shared/SignInput";
 import BackHomeBtn from "./BackHomeBtn";
 import SubmitBtn from "./SubmitBtn";
+import { useDispatch } from "react-redux";
+import { getUsernameLogin } from "../../../store/UsernameLoginSlice";
 
 function SignUp() {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
   const [user, setUser] = useState({
     username: "",
     password: "",
     email: "",
   });
+
+  const [loginData, setLoginData] = useState({
+    username: "",
+    password: ""
+  })
+  useEffect(() => {
+    setLoginData({
+      username: user.username,
+      password: user.password
+    })
+  }, [user.username, user.password])
+
   const [repeatPassword, setRepeatPassword] = useState();
   function getRepeatPassword(e) {
     setRepeatPassword(e.target.value);
@@ -40,15 +56,38 @@ function SignUp() {
       });
 
       if (response.ok) {
-        alert(" Đã đăng ký thành công\n Bạn có thể chuyển qua phần đăng nhập để bắt đầu đăng nhập");
+        // alert(" Đã đăng ký thành công\n Bạn có thể chuyển qua phần đăng nhập để bắt đầu đăng nhập");
         setUser({
           username: "",
           password: "",
           email: "",
         });
         setRepeatPassword('')
+        dispatch(sendLoginData(loginData))
       } else if (response.status === 400) {
         alert("Tên người dùng đã tồn tại");
+      }
+    } catch (error) {
+      console.error("Lỗi:", error);
+    }
+  };
+
+  const sendLoginData = async (loginData) => {
+    try {
+      const response = await fetch("https://apiuser-zavj.onrender.com/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginData),
+      });
+
+      if (response.ok) {
+        navigate("/");
+        dispatch(getUsernameLogin(user.username));
+        sessionStorage.setItem("account", JSON.stringify(loginData));
+      } else {
+        alert("Vui lòng kiểm tra lại tài khoản và mật khẩu của bạn");
       }
     } catch (error) {
       console.error("Lỗi:", error);

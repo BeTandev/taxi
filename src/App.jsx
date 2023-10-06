@@ -45,7 +45,7 @@ function App() {
 
       if (response.ok) {
         dispatch(getUsernameLogin(account.username));
-        sessionStorage.setItem("account", JSON.stringify(user));
+        // sessionStorage.setItem("account", JSON.stringify(user));
       } else {
         alert("Vui lòng kiểm tra lại tài khoản và mật khẩu của bạn");
       }
