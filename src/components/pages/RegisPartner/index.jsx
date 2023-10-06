@@ -8,7 +8,9 @@ import regisImg from "/regisImage.png";
 function RegisPartner() {
   const dispatch = useDispatch();
   let LoginRender = "";
-  let account = JSON.parse(sessionStorage.getItem("account"));
+  let checkAccount1 = JSON.parse(sessionStorage.getItem("account"));
+  let checkAccount2 = JSON.parse(localStorage.getItem("account"))
+  let account = ""
   let dayInput = [];
   let monthInput = [];
   let yearInput = [];
@@ -27,6 +29,12 @@ function RegisPartner() {
   const [idNumberInput, setIdNumberInput] = useState();
   const [phoneNumberInput, setPhoneNumberInput] = useState();
   const [addressInput, setAddressInput] = useState();
+
+  if(checkAccount1){
+    account = checkAccount1
+  }else{
+    account = checkAccount2
+  }
 
   useEffect(() => {
     setRegisDriver({
@@ -117,9 +125,9 @@ function RegisPartner() {
       );
 
       if (response.ok) {
-        alert("Đặt xe thành công");
+        alert("Đăng ký thành công");
       } else {
-        alert("Vui lòng đặt xe lại");
+        alert("Vui lòng đăng ký lại");
       }
     } catch (error) {
       console.error("Lỗi:", error);
