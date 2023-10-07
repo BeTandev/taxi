@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../css/login.scss";
 import { Link } from "react-router-dom";
-import SignIn from "./SignIn";
+// import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 
 function Login() {
@@ -23,7 +23,7 @@ function Login() {
           Đăng ký
         </label>
         <div className="login-form">
-          <SignIn></SignIn>
+          {/* <SignIn></SignIn> */}
           <SignUp></SignUp>
         </div>
       </div>

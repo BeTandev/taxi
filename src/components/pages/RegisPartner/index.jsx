@@ -33,7 +33,7 @@ function RegisPartner() {
   if(checkAccount1){
     account = checkAccount1
   }else{
-    account = checkAccount2
+    account = checkAccount2``
   }
 
   useEffect(() => {
@@ -89,27 +89,19 @@ function RegisPartner() {
     sendRegisDriverData(regisDriver);
   };
 
-  for (let i = 1; i <= 31; i++) {
-    dayInput.push(
-      <option key={i} value={i}>
-        {i}
-      </option>
-    );
+  // Tạo ngày tháng 
+  function dateInput(date, start, end){
+    for (let i = start; i <= end; i++) {
+      date.push(
+        <option key={i} value={i}>
+          {i}
+        </option>
+      );
+    }
   }
-  for (let i = 1; i <= 12; i++) {
-    monthInput.push(
-      <option key={i} value={i}>
-        {i}
-      </option>
-    );
-  }
-  for (let i = 1950; i <= 2023; i++) {
-    yearInput.push(
-      <option key={i} value={i}>
-        {i}
-      </option>
-    );
-  }
+  dateInput(dayInput, 1, 31)
+  dateInput(monthInput, 1, 12)
+  dateInput(yearInput, 1950, 2023)
 
   const sendRegisDriverData = async (regisDriver) => {
     try {

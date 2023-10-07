@@ -8,7 +8,6 @@ function PartnerPage() {
   return (
     <>
       <SecondHeader></SecondHeader>
-      <Header></Header>
       <br></br>
       <Partner></Partner>
       <br></br>

@@ -15,16 +15,18 @@ import './css/style.scss'
 import './css/responsive.scss'
 import UserPage from "./components/pages/AdminPage/UsersPage";
 import BookingPage from "./components/pages/AdminPage/BookingPage.jsx";
+import LoginPage from "./components/pages/AuthPage/LoginPage";
 
 
 function App() {
   const dispatch = useDispatch()
+  let checkAccount1 = JSON.parse(sessionStorage.getItem("account"));
+  let checkAccount2 = JSON.parse(localStorage.getItem("account"))
   let account = ""
-  const dataLogin = JSON.parse(localStorage.getItem("account"));
-  if(dataLogin){
-    account = JSON.parse(localStorage.getItem("account"));
+  if(checkAccount1){
+    account = checkAccount1
   }else{
-    account = JSON.parse(sessionStorage.getItem("account"));
+    account = checkAccount2
   }
 
   useEffect(() => {
@@ -45,7 +47,6 @@ function App() {
 
       if (response.ok) {
         dispatch(getUsernameLogin(account.username));
-        // sessionStorage.setItem("account", JSON.stringify(user));
       } else {
         alert("Vui lòng kiểm tra lại tài khoản và mật khẩu của bạn");
       }
@@ -60,13 +61,13 @@ function App() {
         <Route path="/about-us" element={<AboutUsPage></AboutUsPage>}></Route>
         <Route path="/uu-dai" element={<UuDaiPage></UuDaiPage>}></Route>
         <Route path="/my-team" element={<MyTeamPage></MyTeamPage>}></Route>
-        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/login" element={<LoginPage></LoginPage>}></Route>
         <Route path="/booking" element={<Booking></Booking>}></Route>
         <Route path="/partner" element={<PartnerPage></PartnerPage>}></Route>
         <Route path="/partner-page" element={<RegisPartner></RegisPartner>}></Route>
         <Route path="/admin/message-page" element={<MessagePage></MessagePage>}></Route>
-        <Route path="/admin/user-page"  element={<UserPage></UserPage>}></Route>
-        <Route path="/admin/booking-page"  element={<BookingPage></BookingPage>}></Route>
+        <Route path="/admin/user-page" element={<UserPage></UserPage>}></Route>
+        <Route path="/admin/booking-page" element={<BookingPage></BookingPage>}></Route>
       </Routes>
       <br></br>
     </div>
