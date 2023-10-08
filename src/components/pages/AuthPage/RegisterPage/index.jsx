@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SecondHeader from "../../../Header/SecondHeader";
 import Footer from "../../../Footer";
 import "../../../../css/auth.scss";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getUsernameLogin } from "../../../../store/UsernameLoginSlice";
 
@@ -130,11 +130,11 @@ function RegisterPage() {
           />
 
           <button type="submit" className="btn">
-            Đăng nhập
+            Đăng ký
           </button>
-          <a className="forgot" href="#">
-            Forgot Username?
-          </a>
+          <Link to="/login" className="forgot" href="#">
+            Đăng nhập
+          </Link>
         </form>
       </div>
       <Footer />

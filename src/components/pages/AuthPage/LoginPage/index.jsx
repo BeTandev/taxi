@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../../../css/auth.scss";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getUsernameLogin } from "../../../../store/UsernameLoginSlice";
 import Footer from "../../../Footer";
 import SecondHeader from "../../../Header/SecondHeader";
@@ -94,9 +94,9 @@ function LoginPage() {
           <button type="submit" className="btn">
             Đăng nhập
           </button>
-          <a className="forgot" href="#">
-            Forgot Username?
-          </a>
+          <Link to="/register" className="forgot" href="#">
+            Bạn chưa có tài khoản
+          </Link>
         </form>
       </div>
       <Footer />
