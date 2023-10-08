@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import SignInput from "../../Shared/SignInput";
-import BackHomeBtn from "./BackHomeBtn";
-import SubmitBtn from "./SubmitBtn";
+import SecondHeader from "../../../Header/SecondHeader";
+import Footer from "../../../Footer";
+import "../../../../css/auth.scss";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { getUsernameLogin } from "../../../store/UsernameLoginSlice";
+import { getUsernameLogin } from "../../../../store/UsernameLoginSlice";
 
-function SignUp() {
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
+function RegisterPage() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -17,14 +17,14 @@ function SignUp() {
 
   const [loginData, setLoginData] = useState({
     username: "",
-    password: ""
-  })
+    password: "",
+  });
   useEffect(() => {
     setLoginData({
       username: user.username,
-      password: user.password
-    })
-  }, [user.username, user.password])
+      password: user.password,
+    });
+  }, [user.username, user.password]);
 
   const [repeatPassword, setRepeatPassword] = useState();
   function getRepeatPassword(e) {
@@ -56,14 +56,13 @@ function SignUp() {
       });
 
       if (response.ok) {
-        // alert(" Đã đăng ký thành công\n Bạn có thể chuyển qua phần đăng nhập để bắt đầu đăng nhập");
         setUser({
           username: "",
           password: "",
           email: "",
         });
-        setRepeatPassword('')
-        dispatch(sendLoginData(loginData))
+        setRepeatPassword("");
+        dispatch(sendLoginData(loginData));
       } else if (response.status === 400) {
         alert("Tên người dùng đã tồn tại");
       }
@@ -95,45 +94,52 @@ function SignUp() {
   };
 
   return (
-    <form className="sign-up-htm" onSubmit={handleSubmit}>
-      <SignInput
-        labelContent="Tên người dùng"
-        nameInput="username"
-        valueInput={user.username}
-        handleInput={handleChange}
-      ></SignInput>
+    <>
+      <SecondHeader />
+      <div className="log-form">
+        <h2 className="d-block text-white w-100 m-0 text-uppercase">
+          Đăng nhập
+        </h2>
+        <form className="d-block w-100" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="username"
+            placeholder="Tên tài khoản"
+            onChange={handleChange}
+          />
 
-      <SignInput
-        labelContent="Mật khẩu"
-        typeInput="password"
-        nameInput="password"
-        valueInput={user.password}
-        handleInput={handleChange}
-      ></SignInput>
+          <input
+            type="password"
+            name="password"
+            placeholder="Mật khẩu"
+            onChange={handleChange}
+          />
 
-      <SignInput
-        labelContent="Nhật lại mật khẩu"
-        typeInput="password"
-        nameInput="repeatpassword"
-        handleInput={getRepeatPassword}
-        valueInput={repeatPassword}
-      ></SignInput>
+          <input
+            type="password"
+            name="password"
+            placeholder="Nhập lại mật khẩu"
+            onChange={getRepeatPassword}
+          />
 
-      <SignInput
-        labelContent="Địa chỉ Email"
-        typeInput="email"
-        nameInput="email"
-        valueInput={user.email}
-        handleInput={handleChange}
-      ></SignInput>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            onChange={handleChange}
+          />
 
-      <SubmitBtn content="Đăng ký"></SubmitBtn>
-
-      <BackHomeBtn></BackHomeBtn>
-
-      <div className="hr" />
-    </form>
+          <button type="submit" className="btn">
+            Đăng nhập
+          </button>
+          <a className="forgot" href="#">
+            Forgot Username?
+          </a>
+        </form>
+      </div>
+      <Footer />
+    </>
   );
 }
 
-export default SignUp;
+export default RegisterPage

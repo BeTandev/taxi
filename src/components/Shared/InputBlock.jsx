@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import "../../css/auth.scss"
 
 function InputBlock(props) {
   const {
+    isLabel,
     labelContent,
     typeInput = "text",
     idInput,
     valueInput,
     handleChange,
     isTextDark,
-    checkPhoneNumber
+    checkPhoneNumber,
+    placeholderInput,
+    isChecked
   } = props;
 
   let labelClass = "";
@@ -25,10 +29,15 @@ function InputBlock(props) {
   }else{
     inputClass = "elem-group-input rounded"
   }
+
+  let [inputCheckbox, setInputCheckbox] = useState(false)
+  if(isChecked){
+    setInputCheckbox = true
+  }
   
   return (
     <div className="elem-group">
-      <label className={labelClass}>{labelContent}</label>
+      {isLabel && <label className={labelClass}>{labelContent}</label>}
       {checkPhoneNumber && valueInput.length < 10 && <p className="text-danger warning position-absolute">* Số điện thoại phải đủ 10 số</p>}
       {checkPhoneNumber && valueInput.length > 10 && <p className="text-danger warning position-absolute">* Số điện thoại phải đủ 10 số</p>}
       <input
@@ -38,6 +47,8 @@ function InputBlock(props) {
         name={idInput}
         value={valueInput}
         onChange={handleChange}
+        placeholder={placeholderInput}
+        defaultChecked={inputCheckbox}
         required
       />
     </div>

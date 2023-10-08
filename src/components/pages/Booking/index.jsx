@@ -69,6 +69,7 @@ function Booking() {
             idInput="name"
             valueInput={booking.name}
             handleChange={handleChange}
+            isLabel
           ></InputBlock>
           <InputBlock
             labelContent="Số điện thoại của bạn"
@@ -76,6 +77,7 @@ function Booking() {
             idInput="phone"
             valueInput={booking.phone}
             handleChange={handleChange}
+            isLabel
           ></InputBlock>
           <hr className="elem-group-hr" />
           <InputBlock
@@ -83,12 +85,14 @@ function Booking() {
             idInput="pickupLocation"
             valueInput={booking.pickupLocation}
             handleChange={handleChange}
+            isLabel
           ></InputBlock>
           <InputBlock
             labelContent="Bạn muốn đi đến đâu?"
             idInput="destination"
             valueInput={booking.destination}
             handleChange={handleChange}
+            isLabel
           ></InputBlock>
           <div className="elem-group">
             <label
@@ -115,6 +119,7 @@ function Booking() {
             idInput="note"
             valueInput={booking.note}
             handleChange={handleChange}
+            isLabel
           ></InputBlock>
           <button className="btn-submit text-white" type="submit">
             Đặt xe

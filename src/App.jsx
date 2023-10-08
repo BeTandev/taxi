@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import Login from "./components/pages/Login";
 import HomePage from "./components/pages/HomePage";
 import AboutUsPage from "./components/pages/AboutUsPage";
 import UuDaiPage from "./components/pages/UuDaiPage";
@@ -16,6 +15,7 @@ import './css/responsive.scss'
 import UserPage from "./components/pages/AdminPage/UsersPage";
 import BookingPage from "./components/pages/AdminPage/BookingPage.jsx";
 import LoginPage from "./components/pages/AuthPage/LoginPage";
+import RegisterPage from "./components/pages/AuthPage/RegisterPage";
 
 
 function App() {
@@ -62,6 +62,7 @@ function App() {
         <Route path="/uu-dai" element={<UuDaiPage></UuDaiPage>}></Route>
         <Route path="/my-team" element={<MyTeamPage></MyTeamPage>}></Route>
         <Route path="/login" element={<LoginPage></LoginPage>}></Route>
+        <Route path="/register" element={<RegisterPage></RegisterPage>}></Route>
         <Route path="/booking" element={<Booking></Booking>}></Route>
         <Route path="/partner" element={<PartnerPage></PartnerPage>}></Route>
         <Route path="/partner-page" element={<RegisPartner></RegisPartner>}></Route>

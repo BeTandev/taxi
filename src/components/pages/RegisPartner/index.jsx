@@ -141,6 +141,7 @@ function RegisPartner() {
               labelContent="Họ và tên"
               idInput="FullName"
               // valueInput={regisDriver.FullName}
+              isLabel
               handleChange={getFullName}
             ></InputBlock>
             <hr className="elem-group-hr" />
@@ -149,6 +150,7 @@ function RegisPartner() {
               typeInput="number"
               idInput="IDPerson"
               // valueInput={regisDriver.IDPerson}
+              isLabel
               handleChange={getIdNumber}
             ></InputBlock>
             <InputBlock
@@ -156,6 +158,7 @@ function RegisPartner() {
               typeInput="number"
               idInput="phonenumber"
               // valueInput={regisDriver.phonenumber}
+              isLabel
               handleChange={getPhoneNumber}
             ></InputBlock>
             <div className="elem-group">
@@ -195,6 +198,7 @@ function RegisPartner() {
               labelContent="Địa chỉ"
               idInput="address"
               // valueInput={regisDriver.address}
+              isLabel
               handleChange={getAddress}
             ></InputBlock>
             <button className="btn-submit background-btn text-white" type="submit">

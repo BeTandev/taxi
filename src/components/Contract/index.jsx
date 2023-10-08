@@ -71,6 +71,7 @@ function Contract() {
               </div>
               <form onSubmit={handleSubmit}>
                 <InputBlock
+                  isLabel
                   isTextDark
                   labelContent="Tên bạn là gì?"
                   idInput="name"
@@ -79,6 +80,7 @@ function Contract() {
                 ></InputBlock>
                 <InputBlock
                   isTextDark
+                  isLabel
                   labelContent="Email:"
                   typeInput="email"
                   idInput="email"
@@ -87,6 +89,7 @@ function Contract() {
                 ></InputBlock>
                 <InputBlock
                   isTextDark
+                  isLabel
                   labelContent="Số điện thoại:"
                   typeInput="number"
                   idInput="phonenumber"
@@ -96,6 +99,7 @@ function Contract() {
                 ></InputBlock>
                 <InputBlock
                   isTextDark
+                  isLabel
                   labelContent="Lời nhắn bạn muốn để lại:"
                   idInput="message"
                   valueInput={messages.message}

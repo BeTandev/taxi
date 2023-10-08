@@ -3,9 +3,9 @@ import "../../../../css/auth.scss";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getUsernameLogin } from "../../../../store/UsernameLoginSlice";
-import Header from "../../../Header";
 import Footer from "../../../Footer";
 import SecondHeader from "../../../Header/SecondHeader";
+import InputBlock from "../../../Shared/InputBlock";
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -62,33 +62,33 @@ function LoginPage() {
   }
   return (
     <>
-      <SecondHeader/>
+      <SecondHeader />
       <div className="log-form">
         <h2 className="d-block text-white w-100 m-0 text-uppercase">
           Đăng nhập
         </h2>
         <form className="d-block w-100" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="username"
-            placeholder="Tên tài khoản"
-            onChange={handleChange}
-          />
+          <InputBlock
+            typeInput="text"
+            idInput="username"
+            placeholderInput="Tên tài khoản"
+            handleChange={handleChange}
+          ></InputBlock>
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Mật khẩu"
-            onChange={handleChange}
-          />
+          <InputBlock
+            typeInput="password"
+            idInput="password"
+            placeholderInput="Mật khẩu"
+            handleChange={handleChange}
+          ></InputBlock>
 
           <div className="wrap-checkbox mb-3">
-            <input
-              id="check"
-              type="checkbox"
-              defaultChecked
-              onChange={checkCheckBox}
-            />
+            <InputBlock
+            typeInput="checkbox"
+            idInput="check"
+            handleChange={checkCheckBox}
+            isChecked
+          ></InputBlock>
             <label htmlFor="">Lưu lại đăng nhập</label>
           </div>
           <button type="submit" className="btn">
@@ -99,7 +99,7 @@ function LoginPage() {
           </a>
         </form>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
