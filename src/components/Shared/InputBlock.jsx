@@ -12,7 +12,8 @@ function InputBlock(props) {
     isTextDark,
     checkPhoneNumber,
     placeholderInput,
-    isChecked
+    isChecked,
+    noneRequired
   } = props;
 
   let labelClass = "";

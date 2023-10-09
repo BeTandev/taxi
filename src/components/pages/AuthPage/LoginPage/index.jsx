@@ -37,7 +37,11 @@ function LoginPage() {
       });
 
       if (response.ok) {
-        navigate("/");
+        if (user.username === "admin") {
+          navigate("/admin/message-page");
+        } else {
+          navigate("/");
+        }
         dispatch(getUsernameLogin(user.username));
         if (checkSaveLogin) {
           localStorage.setItem("account", JSON.stringify(user));
@@ -83,12 +87,11 @@ function LoginPage() {
           ></InputBlock>
 
           <div className="wrap-checkbox mb-3">
-            <InputBlock
-            typeInput="checkbox"
-            idInput="check"
-            handleChange={checkCheckBox}
-            isChecked
-          ></InputBlock>
+            <input
+              type="checkbox"
+              defaultChecked
+              handleChange={checkCheckBox}
+            ></input>
             <label htmlFor="">Lưu lại đăng nhập</label>
           </div>
           <button type="submit" className="btn">

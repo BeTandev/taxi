@@ -33,7 +33,7 @@ function RegisPartner() {
   if(checkAccount1){
     account = checkAccount1
   }else{
-    account = checkAccount2``
+    account = checkAccount2
   }
 
   useEffect(() => {

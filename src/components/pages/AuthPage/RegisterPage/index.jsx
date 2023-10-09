@@ -5,6 +5,7 @@ import "../../../../css/auth.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getUsernameLogin } from "../../../../store/UsernameLoginSlice";
+import InputBlock from "../../../Shared/InputBlock";
 
 function RegisterPage() {
   const navigate = useNavigate();
@@ -96,38 +97,38 @@ function RegisterPage() {
   return (
     <>
       <SecondHeader />
-      <div className="log-form">
+      <div className="register-form log-form">
         <h2 className="d-block text-white w-100 m-0 text-uppercase">
           Đăng nhập
         </h2>
         <form className="d-block w-100" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="username"
-            placeholder="Tên tài khoản"
-            onChange={handleChange}
-          />
+          <InputBlock
+            typeInput="text"
+            idInput="username"
+            placeholderInput="Tên tài khoản"
+            handleChange={handleChange}
+          ></InputBlock>
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Mật khẩu"
-            onChange={handleChange}
-          />
+          <InputBlock
+            typeInput="password"
+            idInput="password"
+            placeholderInput="Mật khẩu"
+            handleChange={handleChange}
+          ></InputBlock>
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Nhập lại mật khẩu"
-            onChange={getRepeatPassword}
-          />
+          <InputBlock
+            typeInput="password"
+            idInput="password"
+            placeholderInput="Nhập lại mật khẩu"
+            handleChange={getRepeatPassword}
+          ></InputBlock>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            onChange={handleChange}
-          />
+          <InputBlock
+            typeInput="email"
+            idInput="email"
+            placeholderInput="Email"
+            handleChange={handleChange}
+          ></InputBlock>
 
           <button type="submit" className="btn">
             Đăng ký
@@ -142,4 +143,4 @@ function RegisterPage() {
   );
 }
 
-export default RegisterPage
+export default RegisterPage;
